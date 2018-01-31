@@ -1,23 +1,17 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StackNavigator } from 'react-navigation';
+import StartScreen from './screens/startScreen';
+import OriginScreen from './screens/originScreen';
+import DestinationScreen from './screens/destinationScreen';
+import DirectionScreen from './screens/directionScreen';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const Navigation = StackNavigator({
+    Start: {screen: StartScreen},
+    Origin: {screen: OriginScreen},
+    Destination: {screen: DestinationScreen},
+    Direction: {screen: DirectionScreen}
 });
+
+export default Navigation;
+
+
