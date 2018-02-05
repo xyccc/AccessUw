@@ -10,19 +10,23 @@ export default class DestinationScreen extends React.Component {
         const { params } = this.props.navigation.state;
         return (
             <View style={styles.container}>
-                <Text>Where do you want to get to?</Text>
+                <Text style={styles.title}>Where do you want to go?</Text>
+                <View style={{padding: 20}}/>
                 <OptionButton
                     name="Street Level" nextPage="Direction" navigation={this.props.navigation}
                     from={params.start} to="Street Level"
                 />
+                <View style={{padding: 20}}/>
                 <OptionButton
                     name="Bridge Level" nextPage="Direction" navigation={this.props.navigation}
                     from={params.start} to="Bridge Level"
                 />
+                <View style={{padding: 20}}/>
                 <OptionButton
                     name="Platform Level" nextPage="Direction" navigation={this.props.navigation}
                     from={params.start} to="Platform Level"
                 />
+                <View style={{padding: 20}}/>
             </View>
         );
     }
@@ -34,5 +38,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    title: {
+        fontSize: 28,
     },
 });

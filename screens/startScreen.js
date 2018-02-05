@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default class StartScreen extends React.Component {
     static navigationOptions = {
@@ -9,13 +9,15 @@ export default class StartScreen extends React.Component {
         const {navigate} = this.props.navigation;
         return (
             <View style={styles.container}>
-                <Text>Welcome to AccessUw APP</Text>
-                <Button
+                <Text style={styles.text}>Welcome to AccessUw APP</Text>
+                <TouchableOpacity
                     onPress={
                         () => navigate("Origin", {})
-                    }
-                    title="Start navigation"
-                />
+                    }>
+                    <View style={styles.button}>
+                        <Text style={styles.title}>Start navigation</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -26,6 +28,24 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'center',
-        justifyContent: 'center',
+        paddingTop: 80,
+        paddingLeft: 50,
+        paddingRight: 50,
+        paddingBottom: 50,
     },
+    text: {
+        textAlign: 'center',
+        fontSize: 28,
+        paddingBottom: 150,
+    },
+    button: {
+        width: 250,
+        height: 100,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    title: {
+        fontSize: 32,
+        color: '#007AFF',
+    }
 });
