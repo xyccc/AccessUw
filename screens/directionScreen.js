@@ -8,13 +8,13 @@ export default class DirectionScreen extends React.Component {
         this.state = {isVideoPaused: false};
     }
 
-
     static navigationOptions = {
         title: "direction screen"
     };
 
     render() {
         const { params } = this.props.navigation.state;
+        const { navigate } = this.props.navigation;
         let uriAddr = "https://students.washington.edu/wfjiang/Videos/" + matchVideoName(params) + ".mp4";
         return (
             <View style={styles.container}>
@@ -69,6 +69,14 @@ export default class DirectionScreen extends React.Component {
                         <Text style={styles.title}>Play Again</Text>
                     </View>
                 </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={
+                        () => navigate("Direction2", {start: params.start, end: params.end})
+                    }>
+                    <View style={styles.button}>
+                        <Text style={styles.title}>Next Step</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -86,15 +94,13 @@ function matchVideoName(props) {
     return name;
 }
 
-// this.player.presentFullscreenPlayer();
-// this.player.seek(0);
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'row',
         backgroundColor: '#fff',
         alignItems: 'flex-start',
-        justifyContent: 'flex-end',
+        justifyContent: 'space-between',
     },
     backgroundVideo: {
         position: 'absolute',
