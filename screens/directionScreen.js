@@ -1,13 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-const util = require('util');
-const v = require('react-native-nyt-360-video');
-import Video from "react-native-video";
+import { Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Video from 'react-native-video';
 
 export default class DirectionScreen extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {playing: false};
+        this.state = {isvideoPaused: false};
     }
 
 
@@ -16,23 +14,65 @@ export default class DirectionScreen extends React.Component {
     };
 
     render() {
-        let nytv = v.Nyt360Video;
-        // console.log(util.inspect(this, false, null));
-        console.log("state" + util.inspect(this.state, false, null));
         const { params } = this.props.navigation.state;
+        let uriAddr = "https://students.washington.edu/wfjiang/Videos/" + matchVideoName(params) + ".mp4";
         return (
             <View style={styles.container}>
-                <Text>The route is from {params.start} to {params.end}.</Text>
-                <Video
-                    repeat
-                    resizeMode='cover'
-                    source={{uri: 'http://students.washington.edu/wfjiang/R0010017.MP4'}}
-                    style={styles.backgroundVideo}
-                />
-
+                {Platform.OS === 'ios' &&
+                    <Video source={{uri: uriAddr}}   // Can be a URL or a local file.
+                          ref={(ref) => {
+                              this.player = ref
+                          }}                                      // Store reference
+                          rate={1.0}                              // 0 is paused, 1 is normal.
+                          volume={1.0}                            // 0 is muted, 1 is normal.
+                          muted={false}                           // Mutes the audio entirely.
+                          paused={false}                          // Pauses playback entirely.
+                          resizeMode="cover"                      // Fill the whole screen at aspect ratio.*
+                          repeat={true}                           // Repeat forever.
+                          playInBackground={false}                // Audio continues to play when app entering background.
+                          playWhenInactive={false}                // [iOS] Video continues to play when control or notification center are shown.
+                          ignoreSilentSwitch={"ignore"}           // [iOS] ignore | obey - When 'ignore', audio will still play with the iOS hard silent switch set to silent. When 'obey', audio will toggle with the switch. When not specified, will inherit audio settings as usual.
+                          progressUpdateInterval={250.0}          // [iOS] Interval to fire onProgress (default to ~250ms)
+                          onLoadStart={this.loadStart}            // Callback when video starts to load
+                          onLoad={this.setDuration}               // Callback when video loads
+                          onProgress={this.setTime}               // Callback every ~250ms with currentTime
+                          onEnd={() => this.setState({isVideoPaused: true})}                          // Callback when playback finishes
+                          onError={this.videoError}               // Callback when video cannot be loaded
+                          onBuffer={this.onBuffer}                // Callback when remote video is buffering
+                          onTimedMetadata={this.onTimedMetadata}  // Callback when the stream receive some metadata
+                          style={styles.backgroundVideo}
+                    />
+                }
+                {Platform.OS === 'android' &&
+                    <Video source={{uri: uriAddr, mainVer: 1, patchVer: 0}} // Looks for .mp4 file (background.mp4) in the given expansion version.
+                           rate={1.0}                   // 0 is paused, 1 is normal.
+                           volume={1.0}                 // 0 is muted, 1 is normal.
+                           muted={false}                // Mutes the audio entirely.
+                           paused={false}               // Pauses playback entirely.
+                           resizeMode="cover"           // Fill the whole screen at aspect ratio.
+                           repeat={true}                // Repeat forever.
+                           onLoadStart={this.loadStart} // Callback when video starts to load
+                           onLoad={this.setDuration}    // Callback when video loads
+                           onProgress={this.setTime}    // Callback every ~250ms with currentTime
+                           onEnd={this.onEnd}           // Callback when playback finishes
+                           onError={this.videoError}    // Callback when video cannot be loaded
+                           style={styles.backgroundVideo} />
+                }
             </View>
         );
     }
+}
+
+function matchVideoName(props) {
+    let name = '';
+    if (props.start === 'Bridge Level') {
+        name = 'bridge_to_elevator';
+    } else if (props.start === 'Street Level') {
+        name = 'street_to_elevator';
+    } else if (props.start === 'Platform Level') {
+        name = 'train_to_elevator';
+    }
+    return name;
 }
 
 // this.player.presentFullscreenPlayer();
@@ -42,8 +82,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
     },
     backgroundVideo: {
         position: 'absolute',
