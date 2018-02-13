@@ -5,7 +5,7 @@ import Video from 'react-native-video';
 export default class DirectionScreen extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {isvideoPaused: false};
+        this.state = {isVideoPaused: false};
     }
 
 
@@ -25,10 +25,10 @@ export default class DirectionScreen extends React.Component {
                           }}                                      // Store reference
                           rate={1.0}                              // 0 is paused, 1 is normal.
                           volume={1.0}                            // 0 is muted, 1 is normal.
-                          muted={false}                           // Mutes the audio entirely.
-                          paused={false}                          // Pauses playback entirely.
+                          muted={true}                            // Mutes the audio entirely.
+                          paused={this.state.isVideoPaused}       // Pauses playback entirely.
                           resizeMode="cover"                      // Fill the whole screen at aspect ratio.*
-                          repeat={true}                           // Repeat forever.
+                          repeat={false}                          // Repeat forever.
                           playInBackground={false}                // Audio continues to play when app entering background.
                           playWhenInactive={false}                // [iOS] Video continues to play when control or notification center are shown.
                           ignoreSilentSwitch={"ignore"}           // [iOS] ignore | obey - When 'ignore', audio will still play with the iOS hard silent switch set to silent. When 'obey', audio will toggle with the switch. When not specified, will inherit audio settings as usual.
@@ -47,7 +47,7 @@ export default class DirectionScreen extends React.Component {
                     <Video source={{uri: uriAddr, mainVer: 1, patchVer: 0}} // Looks for .mp4 file (background.mp4) in the given expansion version.
                            rate={1.0}                   // 0 is paused, 1 is normal.
                            volume={1.0}                 // 0 is muted, 1 is normal.
-                           muted={false}                // Mutes the audio entirely.
+                           muted={true}                // Mutes the audio entirely.
                            paused={false}               // Pauses playback entirely.
                            resizeMode="cover"           // Fill the whole screen at aspect ratio.
                            repeat={true}                // Repeat forever.
@@ -58,6 +58,17 @@ export default class DirectionScreen extends React.Component {
                            onError={this.videoError}    // Callback when video cannot be loaded
                            style={styles.backgroundVideo} />
                 }
+                <TouchableOpacity
+                    onPress={
+                        () => {
+                            this.player && this.player.seek(0);
+                            this.setState({isVideoPaused: false});
+                        }
+                    }>
+                    <View style={styles.button}>
+                        <Text style={styles.title}>Play Again</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -83,7 +94,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         alignItems: 'flex-start',
-        justifyContent: 'flex-start',
+        justifyContent: 'flex-end',
     },
     backgroundVideo: {
         position: 'absolute',
@@ -92,4 +103,15 @@ const styles = StyleSheet.create({
         bottom: 0,
         right: 0,
     },
+    button: {
+        width: 100,
+        height: 40,
+        backgroundColor: '#F2F3F4',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    title: {
+        fontSize: 18,
+        color: '#007AFF',
+    }
 });
