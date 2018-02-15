@@ -20,6 +20,7 @@
     "react": "16.0.0",
     "react-native": "^0.53.0",
     "react-native-nyt-360-video": "^1.0.1",
+    "react-native-play-audio": "^0.1.1",
     "react-native-video": "^2.0.0",
     "react-navigation": "^1.0.3",
     "require": "^2.4.20",

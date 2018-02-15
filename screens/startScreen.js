@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import AudioPlayer from 'react-native-play-audio';
 
 export default class StartScreen extends React.Component {
     static navigationOptions = {
@@ -7,6 +8,13 @@ export default class StartScreen extends React.Component {
     };
     render() {
         const {navigate} = this.props.navigation;
+
+
+        AudioPlayer.onEnd(() => {});
+        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/start_screen.mp3', () => {
+            AudioPlayer.play();
+        });
+
         return (
             <View style={styles.container}>
                 <Text style={styles.text}>Welcome to AccessUw APP</Text>
@@ -36,11 +44,11 @@ const styles = StyleSheet.create({
     text: {
         textAlign: 'center',
         fontSize: 28,
-        paddingBottom: 150,
+        paddingBottom: 50,
     },
     button: {
         width: 250,
-        height: 100,
+        height: 350,
         justifyContent: 'center',
         alignItems: 'center',
     },

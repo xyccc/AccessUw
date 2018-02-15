@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.google.vr:sdk-videowidget-1.30.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdk-videowidget-1.30.0.aar/77f407d592a7adcb6652a0a586011325/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/sdk-videowidget-1.30.0.aar/77f407d592a7adcb6652a0a586011325/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
