@@ -16,6 +16,22 @@ export default class DirectionScreen3 extends React.Component {
         const { params } = this.props.navigation.state;
         const { navigate } = this.props.navigation;
         let uriAddr = "https://students.washington.edu/wfjiang/Videos/" + matchVideoName(params) + ".mp4";
+        if (matchVideoName(params) === '') {
+            return (
+                <View style={styles.arrived}>
+                    <TouchableOpacity
+                        onPress={
+                            () => this.props.navigation.popToTop()
+                        }>
+                        <View style={styles.button}>
+                            <Text style={styles.title}>Start Over</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <View style={{paddingTop: 200}}/>
+                    <Text style={{fontSize: 26}}>You arrived!</Text>
+                </View>
+            );
+        }
         return (
             <View style={styles.container}>
                 {Platform.OS === 'ios' && matchVideoName(params) !== '' &&
@@ -119,5 +135,10 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         color: '#007AFF',
+    },
+    arrived: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
     }
 });

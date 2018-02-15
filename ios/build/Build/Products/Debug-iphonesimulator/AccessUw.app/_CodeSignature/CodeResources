@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		XDciMN9bl9qHqtSov3ylLvY9s34=
+		xTlAfo0Nbh5ReHURFvHrSZey/dQ=
 		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
@@ -51,7 +51,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		InY0xB6jylg8xTU/3gOIz9Dba9U=
+		NBEjxsuNaI0K32JtA2xdO8oz7aY=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -67,7 +67,7 @@
 		</data>
 		<key>PlugIns/AccessUwTests.xctest/AccessUwTests</key>
 		<data>
-		aDPepuiYaLRUiOcM0tzR49mC9MY=
+		yyw/4R57ieLnU2Xh278wAHfi54M=
 		</data>
 		<key>PlugIns/AccessUwTests.xctest/Info.plist</key>
 		<data>
@@ -84,11 +84,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XDciMN9bl9qHqtSov3ylLvY9s34=
+			xTlAfo0Nbh5ReHURFvHrSZey/dQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			+JbCfFXCLVL3Om8zRO0SFvWjijepUuxyiL88IMkeNVA=
+			doR4/ovqHDxM2meV7z4QCFqSCJdzdUSLC2kLvMO5ib4=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
@@ -218,11 +218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			aDPepuiYaLRUiOcM0tzR49mC9MY=
+			yyw/4R57ieLnU2Xh278wAHfi54M=
 			</data>
 			<key>hash2</key>
 			<data>
-			QB7BF/rcDErzLxn129yaybXPap57b+f0RRnHGjBQ3sA=
+			Xc1EruKIUXIHz5/a0YQfQneReg+RKwUeu7QjgGD9P58=
 			</data>
 		</dict>
 		<key>PlugIns/AccessUwTests.xctest/Info.plist</key>
