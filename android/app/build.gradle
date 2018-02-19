@@ -137,7 +137,6 @@ android {
 }
 
 dependencies {
-    compile project(':react-native-sound')
     compile project(':react-native-play-audio')
     compile project(':react-native-video')
     compile project(':react-native-nyt-360-video')
