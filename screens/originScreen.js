@@ -17,22 +17,22 @@ export default class OriginScreen extends React.Component {
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>Where is your starting location?</Text>
-                <View style={{padding: 20}}/>
+                <View style={{padding: 10}}/>
                 <OptionButton
                     name="Street Level" nextPage="Destination" navigation={this.props.navigation}
                     from="Street Level" to={undefined}
                 />
-                <View style={{padding: 20}}/>
+                <View style={{padding: 10}}/>
                 <OptionButton
                     name="Bridge Level" nextPage="Destination" navigation={this.props.navigation}
                     from="Bridge Level" to={undefined}
                 />
-                <View style={{padding: 20}}/>
+                <View style={{padding: 10}}/>
                 <OptionButton
                     name="Platform Level" nextPage="Destination" navigation={this.props.navigation}
                     from="Platform Level" to={undefined}
                 />
-                <View style={{padding: 20}}/>
+                <View style={{padding: 10}}/>
             </View>
         );
     }

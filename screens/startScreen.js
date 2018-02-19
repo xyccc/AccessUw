@@ -9,7 +9,6 @@ export default class StartScreen extends React.Component {
     render() {
         const {navigate} = this.props.navigation;
 
-
         AudioPlayer.onEnd(() => {});
         AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/start_screen.mp3', () => {
             AudioPlayer.play();

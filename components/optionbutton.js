@@ -21,8 +21,8 @@ export default class OptionButton extends React.Component {
 
 const styles = StyleSheet.create({
     button: {
-        width: 250,
-        height: 100,
+        width: 320,
+        height: 170,
         backgroundColor: '#F2F3F4',
         justifyContent: 'center',
         alignItems: 'center',
