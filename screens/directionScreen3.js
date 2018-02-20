@@ -25,14 +25,14 @@ export default class DirectionScreen3 extends React.Component {
         });
 
 
-        if (matchVideoName(params) === '') {
+        if (matchVideoName(params) === 'end_screen') {
             return (
                 <View style={styles.arrived}>
                     <TouchableOpacity
                         onPress={
                             () => this.props.navigation.popToTop()
                         }>
-                        <View style={styles.button}>
+                        <View style={styles.specialButton}>
                             <Text style={styles.title}>Start Over</Text>
                         </View>
                     </TouchableOpacity>
@@ -89,9 +89,9 @@ export default class DirectionScreen3 extends React.Component {
 function matchVideoName(props) {
     let name = '';
     if (props.end === 'Bridge Level') {
-        name = '';
+        name = 'end_screen';
     } else if (props.end === 'Street Level') {
-        name = '';
+        name = 'end_screen';
     } else if (props.end === 'Platform Level') {
         name = 'elevator_to_train';
     }
@@ -120,6 +120,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 600
+    },
+    specialButton: {
+        width: 150,
+        height: 70,
+        backgroundColor: '#F2F3F4',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 600,
+        marginLeft: 250
     },
     title: {
         fontSize: 18,

@@ -20,7 +20,7 @@ export default class DirectionScreen2 extends React.Component {
         let audioUriAddr = 'https://students.washington.edu/wfjiang/Audios/' + matchVideoName(params) + '.mp3';
 
         AudioPlayer.onEnd(() => {});
-        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/push_platform_button.mp3', () => {
+        AudioPlayer.prepare(audioUriAddr, () => {
             AudioPlayer.play();
         });
         return (
