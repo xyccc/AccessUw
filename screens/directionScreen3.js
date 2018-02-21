@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import {Platform, StyleSheet, Text, TouchableOpacity, View, Image, Dimensions} from 'react-native';
 import Video from 'react-native-video';
 import AudioPlayer from "react-native-play-audio";
 
@@ -28,16 +28,17 @@ export default class DirectionScreen3 extends React.Component {
         if (matchVideoName(params) === 'end_screen') {
             return (
                 <View style={styles.arrived}>
-                    <TouchableOpacity
-                        onPress={
-                            () => this.props.navigation.popToTop()
-                        }>
-                        <View style={styles.specialButton}>
-                            <Text style={styles.title}>Start Over</Text>
-                        </View>
-                    </TouchableOpacity>
-                    <View style={{paddingTop: 200}}/>
-                    <Text style={{fontSize: 26}}>You arrived!</Text>
+                    <Text style={{fontSize: 26, paddingTop: (height - 64) / 2}}>You arrived!</Text>
+                    <View style={{paddingTop: height - 64 - 333 -70, marginLeft: width - 150}}>
+                        <TouchableOpacity
+                            onPress={
+                                () => this.props.navigation.popToTop()
+                            }>
+                            <View style={styles.specialButton}>
+                                <Text style={styles.title}>Start Over</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
                 </View>
             );
         }
@@ -62,29 +63,35 @@ export default class DirectionScreen3 extends React.Component {
                        onError={this.videoError}    // Callback when video cannot be loaded
                        style={styles.backgroundVideo} />
                 }
-                <TouchableOpacity
-                    onPress={
-                        () => {
-                            this.player && this.player.seek(0);
-                            this.setState({isVideoPaused: false});
-                        }
-                    }>
-                    <View style={styles.button}>
-                        <Text style={styles.title}>Play Again</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={
-                        () => this.props.navigation.popToTop()
-                    }>
-                    <View style={styles.button}>
-                        <Text style={styles.title}>Start Over</Text>
-                    </View>
-                </TouchableOpacity>
+                <View style={{paddingTop: height - 64 - 70}}>
+                    <TouchableOpacity
+                        onPress={
+                            () => {
+                                this.player && this.player.seek(0);
+                                this.setState({isVideoPaused: false});
+                            }
+                        }>
+                        <View style={styles.button}>
+                            <Text style={styles.title}>Play Again</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={{paddingTop: height - 64 - 70}}>
+                    <TouchableOpacity
+                        onPress={
+                            () => this.props.navigation.popToTop()
+                        }>
+                        <View style={styles.button}>
+                            <Text style={styles.title}>Start Over</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }
 }
+
+let {height, width} = Dimensions.get('window');
 
 function matchVideoName(props) {
     let name = '';
@@ -119,7 +126,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F2F3F4',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 600
     },
     specialButton: {
         width: 150,
@@ -127,8 +133,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F2F3F4',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 600,
-        marginLeft: 250
     },
     title: {
         fontSize: 18,

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import { Dimensions, Platform, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 import Video from 'react-native-video';
 import AudioPlayer from "react-native-play-audio";
 
@@ -30,29 +30,35 @@ export default class DirectionScreen extends React.Component {
                     source={{uri: gifUriAddr}}
                     style={styles.backgroundVideo}
                 />
-                <TouchableOpacity
-                    onPress={
-                        () => {
-                            this.player && this.player.seek(0);
-                            this.setState({isVideoPaused: false});
-                        }
-                    }>
-                    <View style={styles.button}>
-                        <Text style={styles.title}>Play Again</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={
-                        () => navigate("Direction2", {start: params.start, end: params.end})
-                    }>
-                    <View style={styles.button}>
-                        <Text style={styles.title}>Next Step</Text>
-                    </View>
-                </TouchableOpacity>
+                <View style={{paddingTop: height - 64 - 70}}>
+                    <TouchableOpacity
+                        onPress={
+                            () => {
+                                this.player && this.player.seek(0);
+                                this.setState({isVideoPaused: false});
+                            }
+                        }>
+                        <View style={styles.button}>
+                            <Text style={styles.title}>Play Again</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={{paddingTop: height - 64 - 70}}>
+                    <TouchableOpacity
+                        onPress={
+                            () => navigate("Direction2", {start: params.start, end: params.end})
+                        }>
+                        <View style={styles.button}>
+                            <Text style={styles.title}>Next Step</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }
 }
+
+let {height} = Dimensions.get('window');
 
 function matchVideoName(props) {
     let name = '';
@@ -87,7 +93,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#F2F3F4',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 600
     },
     title: {
         fontSize: 18,
