@@ -1,5 +1,6 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, TouchableOpacity, View, Image, Dimensions} from 'react-native';
+import { Dimensions, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Header } from 'react-navigation';
 import Video from 'react-native-video';
 import AudioPlayer from "react-native-play-audio";
 
@@ -28,8 +29,8 @@ export default class DirectionScreen3 extends React.Component {
         if (matchVideoName(params) === 'end_screen') {
             return (
                 <View style={styles.arrived}>
-                    <Text style={{fontSize: 26, paddingTop: (height - 64) / 2}}>You arrived!</Text>
-                    <View style={{paddingTop: height - 64 - 333 -70, marginLeft: width - 150}}>
+                    <Text style={{fontSize: 26, paddingTop: (height - Header.HEIGHT) / 2}}>You arrived!</Text>
+                    <View style={{paddingTop: (height - Header.HEIGHT) / 2 - 30 - 70, marginLeft: width - 150}}>
                         <TouchableOpacity
                             onPress={
                                 () => this.props.navigation.popToTop()
@@ -63,7 +64,7 @@ export default class DirectionScreen3 extends React.Component {
                        onError={this.videoError}    // Callback when video cannot be loaded
                        style={styles.backgroundVideo} />
                 }
-                <View style={{paddingTop: height - 64 - 70}}>
+                <View style={{paddingTop: height - Header.HEIGHT - 70}}>
                     <TouchableOpacity
                         onPress={
                             () => {
@@ -76,7 +77,7 @@ export default class DirectionScreen3 extends React.Component {
                         </View>
                     </TouchableOpacity>
                 </View>
-                <View style={{paddingTop: height - 64 - 70}}>
+                <View style={{paddingTop: height - Header.HEIGHT - 70}}>
                     <TouchableOpacity
                         onPress={
                             () => this.props.navigation.popToTop()

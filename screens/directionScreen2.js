@@ -1,7 +1,8 @@
 import React from 'react';
-import {Platform, StyleSheet, Text, TouchableOpacity, View, Image, Dimensions} from 'react-native';
+import { Platform, StyleSheet, Text, TouchableOpacity, View, Image, Dimensions } from 'react-native';
 import Video from 'react-native-video';
 import AudioPlayer from "react-native-play-audio";
+import { Header } from "react-navigation";
 
 export default class DirectionScreen2 extends React.Component {
     constructor(props) {
@@ -44,7 +45,7 @@ export default class DirectionScreen2 extends React.Component {
                        onError={this.videoError}    // Callback when video cannot be loaded
                        style={styles.backgroundVideo} />
                 }
-                <View style={{paddingTop: height - 64 - 70}}>
+                <View style={{paddingTop: height - Header.HEIGHT - 70}}>
                     <TouchableOpacity
                         onPress={
                             () => {
@@ -57,7 +58,7 @@ export default class DirectionScreen2 extends React.Component {
                         </View>
                     </TouchableOpacity>
                 </View>
-                <View style={{paddingTop: height - 64 - 70}}>
+                <View style={{paddingTop: height - Header.HEIGHT - 70}}>
                     <TouchableOpacity
                         onPress={
                             () => navigate("Direction3", {start: params.start, end: params.end})

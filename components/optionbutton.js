@@ -1,5 +1,6 @@
 import React from 'react';
-import {Alert, Dimensions, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { Dimensions, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { Header } from 'react-navigation';
 
 export default class OptionButton extends React.Component {
     render() {
@@ -24,7 +25,7 @@ let {height} = Dimensions.get('window');
 const styles = StyleSheet.create({
     button: {
         width: 340,
-        height: (height - 64 - 77 - 80) / 3,
+        height: (height - Header.HEIGHT - 77 - 80) / 3,
         backgroundColor: '#F2F3F4',
         justifyContent: 'center',
         alignItems: 'center',

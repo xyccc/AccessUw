@@ -1,5 +1,6 @@
 import React from 'react';
 import { Dimensions, Platform, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import { Header } from 'react-navigation';
 import Video from 'react-native-video';
 import AudioPlayer from "react-native-play-audio";
 
@@ -30,7 +31,7 @@ export default class DirectionScreen extends React.Component {
                     source={{uri: gifUriAddr}}
                     style={styles.backgroundVideo}
                 />
-                <View style={{paddingTop: height - 64 - 70}}>
+                <View style={{paddingTop: height - Header.HEIGHT - 70}}>
                     <TouchableOpacity
                         onPress={
                             () => {
@@ -43,7 +44,7 @@ export default class DirectionScreen extends React.Component {
                         </View>
                     </TouchableOpacity>
                 </View>
-                <View style={{paddingTop: height - 64 - 70}}>
+                <View style={{paddingTop: height - Header.HEIGHT - 70}}>
                     <TouchableOpacity
                         onPress={
                             () => navigate("Direction2", {start: params.start, end: params.end})
