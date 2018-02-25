@@ -4,9 +4,21 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>AppIcon29x29@2x.png</key>
+		<data>
+		2t4+/RnDbsj6iGpn3oS8ZCqv/L4=
+		</data>
+		<key>AppIcon29x29@3x.png</key>
+		<data>
+		uL+L9PjmVgmiR0l6486wRUx3nNE=
+		</data>
+		<key>Assets.car</key>
+		<data>
+		XWxax9JmrSnpi8ZTXb0OypFjCcE=
+		</data>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		xTlAfo0Nbh5ReHURFvHrSZey/dQ=
+		RjXBv1VVWhspuBjHu7N4Jg20fM0=
 		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
@@ -51,7 +63,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		NBEjxsuNaI0K32JtA2xdO8oz7aY=
+		MJbhQj2ZhVvH57d8HKWUmNOjAnI=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -80,15 +92,48 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>AppIcon29x29@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2t4+/RnDbsj6iGpn3oS8ZCqv/L4=
+			</data>
+			<key>hash2</key>
+			<data>
+			c+c01zxx/Qk7BHy3CZos5gAo4Y5Ba+tJ9Ow6oXVk+68=
+			</data>
+		</dict>
+		<key>AppIcon29x29@3x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			uL+L9PjmVgmiR0l6486wRUx3nNE=
+			</data>
+			<key>hash2</key>
+			<data>
+			tUa5mPyW5OVXiEbPZdyQVh/beWQ1qZxSykBJrgBXiAo=
+			</data>
+		</dict>
+		<key>Assets.car</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			XWxax9JmrSnpi8ZTXb0OypFjCcE=
+			</data>
+			<key>hash2</key>
+			<data>
+			4blSLUu19JfrkmcXsK2NDF94gBGL23ZVbXB8ZzcDqy0=
+			</data>
+		</dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xTlAfo0Nbh5ReHURFvHrSZey/dQ=
+			RjXBv1VVWhspuBjHu7N4Jg20fM0=
 			</data>
 			<key>hash2</key>
 			<data>
-			doR4/ovqHDxM2meV7z4QCFqSCJdzdUSLC2kLvMO5ib4=
+			LBoS4BV1lRo5e5lYzkcLq7amkrzLEw0YumaSI4mMhPw=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
