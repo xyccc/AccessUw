@@ -6,10 +6,14 @@ export default class OptionButton extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         const { from, to, nextPage } = this.props;
+        const { audioPlayer } = this.props;
         return (
             <TouchableOpacity
                 onPress={
-                    () => navigate(nextPage, {start: from, end: to})
+                    () => {
+                        audioPlayer.stop();
+                        navigate(nextPage, {start: from, end: to});
+                    }
                 }>
                 <View style={styles.button}>
                     <Text style={styles.title}>{this.props.name}</Text>
