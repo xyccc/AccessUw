@@ -7,8 +7,12 @@ export default class OptionButton extends React.Component {
         const { navigate } = this.props.navigation;
         const { from, to, nextPage } = this.props;
         const { audioPlayer } = this.props;
+        let disableButton = from === to;
+        let titleCol = styles.title;
+        if (disableButton)
+            titleCol = styles.disabled;
         return (
-            <TouchableOpacity
+            <TouchableOpacity disabled={disableButton}
                 onPress={
                     () => {
                         audioPlayer.stop();
@@ -16,10 +20,9 @@ export default class OptionButton extends React.Component {
                     }
                 }>
                 <View style={styles.button}>
-                    <Text style={styles.title}>{this.props.name}</Text>
+                    <Text style={titleCol}>{this.props.name}</Text>
                 </View>
             </TouchableOpacity>
-
         );
     }
 }
@@ -37,6 +40,10 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 28,
         color: '#007AFF',
+    },
+    disabled: {
+        fontSize: 28,
+        color: '#909497',
     }
 });
 
