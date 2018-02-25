@@ -9,27 +9,28 @@ export default class DestinationScreen extends React.Component {
     };
     render() {
         const { params } = this.props.navigation.state;
+
+        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/destinationScreen.mp3', () => {});
+        AudioPlayer.play();
         AudioPlayer.onEnd(() => {});
-        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/destinationScreen.mp3', () => {
-            AudioPlayer.play();
-        });
+
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>Where do you want to go?</Text>
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Street Level" nextPage="Direction" navigation={this.props.navigation}
-                    from={params.start} to="Street Level"
+                    audioPlayer={AudioPlayer} from={params.start} to="Street Level"
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Bridge Level" nextPage="Direction" navigation={this.props.navigation}
-                    from={params.start} to="Bridge Level"
+                    audioPlayer={AudioPlayer} from={params.start} to="Bridge Level"
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Platform Level" nextPage="Direction" navigation={this.props.navigation}
-                    from={params.start} to="Platform Level"
+                    audioPlayer={AudioPlayer} from={params.start} to="Platform Level"
                 />
                 <View style={{padding: 10}}/>
             </View>

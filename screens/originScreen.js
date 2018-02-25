@@ -9,10 +9,10 @@ export default class OriginScreen extends React.Component {
     };
     render() {
 
+        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/originScreen.mp3', () => {});
+        AudioPlayer.play();
         AudioPlayer.onEnd(() => {});
-        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/originScreen.mp3', () => {
-            AudioPlayer.play();
-        });
+
 
         return (
             <View style={styles.container}>
@@ -20,17 +20,17 @@ export default class OriginScreen extends React.Component {
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Street Level" nextPage="Destination" navigation={this.props.navigation}
-                    from="Street Level" to={undefined}
+                    audioPlayer={AudioPlayer} from="Street Level" to={undefined}
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Bridge Level" nextPage="Destination" navigation={this.props.navigation}
-                    from="Bridge Level" to={undefined}
+                    audioPlayer={AudioPlayer} from="Bridge Level" to={undefined}
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Platform Level" nextPage="Destination" navigation={this.props.navigation}
-                    from="Platform Level" to={undefined}
+                    audioPlayer={AudioPlayer} from="Platform Level" to={undefined}
                 />
                 <View style={{padding: 10}}/>
             </View>

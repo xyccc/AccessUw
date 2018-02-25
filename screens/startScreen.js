@@ -9,17 +9,19 @@ export default class StartScreen extends React.Component {
     render() {
         const {navigate} = this.props.navigation;
 
+        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/start_screen.mp3', () => {});
+        AudioPlayer.play();
         AudioPlayer.onEnd(() => {});
-        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/start_screen.mp3', () => {
-            AudioPlayer.play();
-        });
 
         return (
             <View style={styles.container}>
                 <Text style={styles.text}>Welcome to AccessUw APP</Text>
                 <TouchableOpacity
                     onPress={
-                        () => navigate("Origin", {})
+                        () => {
+                            AudioPlayer.stop();
+                            navigate("Origin", {});
+                        }
                     }>
                     <View style={styles.button}>
                         <Text style={styles.title}>Start navigation</Text>
