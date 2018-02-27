@@ -10,7 +10,11 @@ export default class InfoIcon extends React.Component {
                 onPress={
                     () => navigate("Info")
                 }>
-                <Image source={require('../Icons/info.png')}/>
+                <Image
+                    source={require('../Icons/info.png')}
+                    accessibilityLabel={"Information Icon"}
+                    accessible={true}
+                />
             </TouchableOpacity>
         );
     }

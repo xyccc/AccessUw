@@ -13,7 +13,11 @@ export default class PhoneIcon extends React.Component {
                 onPress={
                     () => call(args).catch(console.error)
                 }>
-                <Image source={require('../Icons/call.png')}/>
+                <Image
+                    source={require('../Icons/call.png')}
+                    accessibilityLabel={"Call For Help"}
+                    accessible={true}
+                />
             </TouchableOpacity>
         );
     }
