@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import AudioPlayer from 'react-native-play-audio';
 
 export default class StartScreen extends React.Component {
     static navigationOptions = {
@@ -9,19 +8,12 @@ export default class StartScreen extends React.Component {
     render() {
         const {navigate} = this.props.navigation;
 
-        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/start_screen.mp3', () => {});
-        AudioPlayer.play();
-        AudioPlayer.onEnd(() => {});
-
         return (
             <View style={styles.container}>
                 <Text style={styles.text}>Welcome to AccessUw APP</Text>
                 <TouchableOpacity
                     onPress={
-                        () => {
-                            AudioPlayer.stop();
-                            navigate("Origin", {});
-                        }
+                        () => navigate("Origin", {})
                     }>
                     <View style={styles.button}>
                         <Text style={styles.title}>Start navigation</Text>

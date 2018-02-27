@@ -1,7 +1,6 @@
 import React from 'react';
 import { Platform, StyleSheet, Text, TouchableOpacity, View, Image, Dimensions } from 'react-native';
 import Video from 'react-native-video';
-import AudioPlayer from "react-native-play-audio";
 import { Header } from "react-navigation";
 
 export default class DirectionScreen2 extends React.Component {
@@ -19,10 +18,6 @@ export default class DirectionScreen2 extends React.Component {
         const { navigate } = this.props.navigation;
         let uriAddr = "https://students.washington.edu/wfjiang/Videos/" + matchVideoName(params) + ".mp4";
 
-        // AudioPlayer.onEnd(() => {});
-        // AudioPlayer.prepare(audioUriAddr, () => {
-        //     AudioPlayer.play();
-        // });
         return (
             <View style={styles.container}>
                 {Platform.OS === 'ios' &&

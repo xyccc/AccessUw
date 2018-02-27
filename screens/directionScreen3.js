@@ -2,7 +2,6 @@ import React from 'react';
 import { Dimensions, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Header } from 'react-navigation';
 import Video from 'react-native-video';
-import AudioPlayer from "react-native-play-audio";
 
 export default class DirectionScreen3 extends React.Component {
     constructor(props) {
@@ -18,10 +17,6 @@ export default class DirectionScreen3 extends React.Component {
         const { params } = this.props.navigation.state;
         const { navigate } = this.props.navigation;
         let uriAddr = "https://students.washington.edu/wfjiang/Videos/" + matchVideoName(params) + ".mp4";
-        // AudioPlayer.onEnd(() => {});
-        // AudioPlayer.prepare(audioUriAddr, () => {
-        //     AudioPlayer.play();
-        // });
 
 
         if (matchVideoName(params) === 'end_screen') {

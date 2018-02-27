@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import OptionButton from '../components/optionbutton';
-import AudioPlayer from "react-native-play-audio";
 
 export default class OriginScreen extends React.Component {
     static navigationOptions = {
@@ -9,28 +8,23 @@ export default class OriginScreen extends React.Component {
     };
     render() {
 
-        AudioPlayer.prepare('https://students.washington.edu/wfjiang/Audios/originScreen.mp3', () => {});
-        AudioPlayer.play();
-        AudioPlayer.onEnd(() => {});
-
-
         return (
             <View style={styles.container}>
                 <Text style={styles.title}>Where is your starting location?</Text>
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Street Level" nextPage="Destination" navigation={this.props.navigation}
-                    audioPlayer={AudioPlayer} from="Street Level" to={undefined}
+                    from="Street Level" to={undefined}
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Bridge Level" nextPage="Destination" navigation={this.props.navigation}
-                    audioPlayer={AudioPlayer} from="Bridge Level" to={undefined}
+                    from="Bridge Level" to={undefined}
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Platform Level" nextPage="Destination" navigation={this.props.navigation}
-                    audioPlayer={AudioPlayer} from="Platform Level" to={undefined}
+                    from="Platform Level" to={undefined}
                 />
                 <View style={{padding: 10}}/>
             </View>

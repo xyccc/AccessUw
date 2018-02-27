@@ -6,7 +6,6 @@ export default class OptionButton extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         const { from, to, nextPage } = this.props;
-        const { audioPlayer } = this.props;
         let disableButton = from === to;
         let titleCol = styles.title;
         if (disableButton)
@@ -14,10 +13,7 @@ export default class OptionButton extends React.Component {
         return (
             <TouchableOpacity disabled={disableButton}
                 onPress={
-                    () => {
-                        audioPlayer.stop();
-                        navigate(nextPage, {start: from, end: to});
-                    }
+                    () => navigate(nextPage, {start: from, end: to})
                 }>
                 <View style={styles.button}>
                     <Text style={titleCol}>{this.props.name}</Text>
