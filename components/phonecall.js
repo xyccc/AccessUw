@@ -11,7 +11,7 @@ export default class PhoneIcon extends React.Component {
         return (
             <TouchableOpacity
                 onPress={
-                    () => call(args).catch(console.error)
+                    () => call(args).catch(() => null)
                 }>
                 <Image
                     source={require('../Icons/call.png')}
