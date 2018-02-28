@@ -5,7 +5,7 @@ import call from 'react-native-phone-call';
 export default class PhoneIcon extends React.Component {
     render() {
         const args = {
-            number: '0123456789',  // should be phone number of transit station
+            number: '8888896368',  // should be phone number of transit station
         };
 
         return (
