@@ -104,9 +104,9 @@ function matchVideoName(props) {
     if (props.start === 'Bridge Level') {
         name = 'bridge_to_elevator_as';
     } else if (props.start === 'Street Level') {
-        name = 'street_to_elevator';
+        name = 'street_to_elevator_as';
     } else if (props.start === 'Platform Level') {
-        name = 'train_to_elevator';
+        name = 'platform_to_elevator_as';
     }
     return name;
 }

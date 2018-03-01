@@ -120,9 +120,9 @@ let {height, width} = Dimensions.get('window');
 function matchVideoName(props) {
     let name = '';
     if (props.end === 'Bridge Level') {
-        name = 'end_screen';
+        name = 'exit_to_bridge_as';
     } else if (props.end === 'Street Level') {
-        name = 'end_screen';
+        name = 'exir_to_street_as';
     } else if (props.end === 'Platform Level') {
         name = 'elevator_to_train_as';
     }

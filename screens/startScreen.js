@@ -18,7 +18,7 @@ export default class StartScreen extends React.Component {
                         <InfoIcon navigation={this.props.navigation}/>
                     </View>
                 </View>
-                <Text style={styles.text}>Welcome to AccessUw APP</Text>
+                <Text style={styles.text} accessibilityLabel={"Welcome to AccessU Dub APP"}>Welcome to AccessUW APP</Text>
                 <TouchableOpacity
                     onPress={
                         () => navigate("Origin", {})

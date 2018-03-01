@@ -102,9 +102,9 @@ let {height} = Dimensions.get('window');
 function matchVideoName(props) {
     let name = '';
     if (props.end === 'Bridge Level') {
-        name = 'push_bridge_button';
+        name = 'push_bridge_button_as';
     } else if (props.end === 'Street Level') {
-        name = 'push_street_button';
+        name = 'push_street_button_as';
     } else if (props.end === 'Platform Level') {
         name = 'push_platform_as';
     }
