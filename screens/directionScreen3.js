@@ -71,13 +71,13 @@ export default class DirectionScreen3 extends React.Component {
                            rate={1.0}                   // 0 is paused, 1 is normal.
                            volume={1.0}                 // 0 is muted, 1 is normal.
                            muted={false}                // Mutes the audio entirely.
-                           paused={false}               // Pauses playback entirely.
+                           paused={this.state.isVideoPaused}               // Pauses playback entirely.
                            resizeMode="cover"           // Fill the whole screen at aspect ratio.
-                           repeat={true}                // Repeat forever.
+                           repeat={false}                // Repeat forever.
                            onLoadStart={this.loadStart} // Callback when video starts to load
                            onLoad={this.setDuration}    // Callback when video loads
                            onProgress={this.setTime}    // Callback every ~250ms with currentTime
-                           onEnd={this.onEnd}           // Callback when playback finishes
+                           onEnd={() => this.setState({isVideoPaused: true})}           // Callback when playback finishes
                            onError={this.videoError}    // Callback when video cannot be loaded
                            style={styles.backgroundVideo} />
                     }
