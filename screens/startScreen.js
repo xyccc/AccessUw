@@ -61,12 +61,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderStyle: 'solid',
         borderColor: '#fff',
-        backgroundColor: '#dcdcdc',
+        backgroundColor: '#F2F3F4',
         borderRadius: 20
     },
     title: {
         fontSize: 32,
-        color: '#000',
+        color: '#007AFF',
         fontFamily: 'Menlo'
     },
 });

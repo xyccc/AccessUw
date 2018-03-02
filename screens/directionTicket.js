@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
-        color: '#8a2be2',
+        color: '#007AFF',
         fontFamily: 'Menlo'
     },
     map: {
