@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dimensions, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { StyleSheet, Text, View} from 'react-native';
 import OptionButton from '../components/optionbutton';
 
 export default class TicketScreen extends React.Component {
@@ -13,12 +13,12 @@ export default class TicketScreen extends React.Component {
             <View style={styles.container}>
                 <OptionButton
                     name="I need directions to ticket booth" nextPage="Direction" navigation={this.props.navigation}
-                    from={params.start} to={params.end} ticket="true"
+                    from={params.start} to={params.end} ticket={true}
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="I don't need directions to ticket booth" nextPage="Direction" navigation={this.props.navigation}
-                    from={params.start} to={params.end} ticket="false"
+                    from={params.start} to={params.end} ticket={false}
                 />
             </View>
         );
@@ -31,11 +31,5 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    text: {
-        fontSize: 23,
-        paddingLeft: 10,
-        paddingRight:10,
-        paddingTop: 100
     },
 });
