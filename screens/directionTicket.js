@@ -5,7 +5,7 @@ import Video from 'react-native-video';
 import PhoneIcon from '../components/phonecall';
 import InfoIcon from '../components/infomation';
 
-export default class DirectionScreen extends React.Component {
+export default class DirectionTicket extends React.Component {
     constructor(props) {
         super(props);
         this.state = {isVideoPaused: false};
@@ -20,10 +20,6 @@ export default class DirectionScreen extends React.Component {
         const { navigate } = this.props.navigation;
         let uriAddr = "https://students.washington.edu/wfjiang/Videos2/" + matchVideoName(params) + ".mp4";
         let mapAddr = matchMapName(params);
-        let nextPage = "Direction2";
-        if (params.ticket === true) {
-            nextPage = "DirectionTicket";
-        }
 
         return (
             <View>
@@ -91,7 +87,7 @@ export default class DirectionScreen extends React.Component {
                         onPress={
                             () => {
                                 this.setState({isVideoPaused: true});
-                                navigate(nextPage, {start: params.start, end: params.end});
+                                navigate("Direction2", {start: params.start, end: params.end});
                             }
                         }>
                         <View style={styles.button}>
@@ -109,11 +105,9 @@ let {height} = Dimensions.get('window');
 function matchVideoName(props) {
     let name = '';
     if (props.start === 'Bridge Level') {
-        name = 'bridge_to_elevator_as';
+        name = 'bridge_scanner_as';
     } else if (props.start === 'Street Level') {
-        name = 'street_to_elevator_as';
-    } else if (props.start === 'Platform Level') {
-        name = 'platform_to_elevator_as';
+        name = 'street_scanner_as';
     }
     return name;
 }
