@@ -7,6 +7,7 @@ import DirectionScreen from './screens/directionScreen';
 import DirectionScreen2 from './screens/directionScreen2';
 import DirectionScreen3 from './screens/directionScreen3';
 import InfoScreen from './screens/infoScreen';
+import TicketScreen from './screens/ticketScreen';
 
 const Navigation = StackNavigator({
     Start: {screen: StartScreen},
@@ -16,6 +17,7 @@ const Navigation = StackNavigator({
     Direction2: {screen: DirectionScreen2},
     Direction3: {screen: DirectionScreen3},
     Info: {screen: InfoScreen},
+    Ticket: {screen: TicketScreen}
 });
 
 export default Navigation;

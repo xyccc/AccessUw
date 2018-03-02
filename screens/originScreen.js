@@ -14,17 +14,17 @@ export default class OriginScreen extends React.Component {
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Street Level" nextPage="Destination" navigation={this.props.navigation}
-                    from="Street Level" to={undefined}
+                    from="Street Level" to={undefined} ticket = {undefined}
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Bridge Level" nextPage="Destination" navigation={this.props.navigation}
-                    from="Bridge Level" to={undefined}
+                    from="Bridge Level" to={undefined} ticket = {undefined}
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
                     name="Platform Level" nextPage="Destination" navigation={this.props.navigation}
-                    from="Platform Level" to={undefined}
+                    from="Platform Level" to={undefined} ticket = {undefined}
                 />
                 <View style={{padding: 10}}/>
             </View>

@@ -14,18 +14,18 @@ export default class DestinationScreen extends React.Component {
                 <Text style={styles.title}>Where do you want to go?</Text>
                 <View style={{padding: 10}}/>
                 <OptionButton
-                    name="Street Level" nextPage="Direction" navigation={this.props.navigation}
-                    from={params.start} to="Street Level"
+                    name="Street Level" nextPage="Ticket" navigation={this.props.navigation}
+                    from={params.start} to="Street Level" ticket = {undefined}
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
-                    name="Bridge Level" nextPage="Direction" navigation={this.props.navigation}
-                    from={params.start} to="Bridge Level"
+                    name="Bridge Level" nextPage="Ticket" navigation={this.props.navigation}
+                    from={params.start} to="Bridge Level" ticket = {undefined}
                 />
                 <View style={{padding: 10}}/>
                 <OptionButton
-                    name="Platform Level" nextPage="Direction" navigation={this.props.navigation}
-                    from={params.start} to="Platform Level"
+                    name="Platform Level" nextPage="Ticket" navigation={this.props.navigation}
+                    from={params.start} to="Platform Level" ticket = {undefined}
                 />
                 <View style={{padding: 10}}/>
             </View>

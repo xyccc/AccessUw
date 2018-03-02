@@ -19,25 +19,26 @@ export default class DirectionScreen3 extends React.Component {
         const { params } = this.props.navigation.state;
         const { navigate } = this.props.navigation;
         let uriAddr = "https://students.washington.edu/wfjiang/Videos2/" + matchVideoName(params) + ".mp4";
+        let mapAddr = matchMapName(params);
 
+        // if (matchVideoName(params) === 'end_screen') {
+        //     return (
+        //         <View style={styles.arrived}>
+        //             <Text style={{fontSize: 26, paddingTop: (height - Header.HEIGHT) / 2}}>You arrived!</Text>
+        //             <View style={{paddingTop: (height - Header.HEIGHT) / 2 - 30 - 70, marginLeft: width - 150}}>
+        //                 <TouchableOpacity
+        //                     onPress={
+        //                         () => this.props.navigation.popToTop()
+        //                     }>
+        //                     <View style={styles.specialButton}>
+        //                         <Text style={styles.title}>Start Over</Text>
+        //                     </View>
+        //                 </TouchableOpacity>
+        //             </View>
+        //         </View>
+        //     );
+        // }
 
-        if (matchVideoName(params) === 'end_screen') {
-            return (
-                <View style={styles.arrived}>
-                    <Text style={{fontSize: 26, paddingTop: (height - Header.HEIGHT) / 2}}>You arrived!</Text>
-                    <View style={{paddingTop: (height - Header.HEIGHT) / 2 - 30 - 70, marginLeft: width - 150}}>
-                        <TouchableOpacity
-                            onPress={
-                                () => this.props.navigation.popToTop()
-                            }>
-                            <View style={styles.specialButton}>
-                                <Text style={styles.title}>Start Over</Text>
-                            </View>
-                        </TouchableOpacity>
-                    </View>
-                </View>
-            );
-        }
         return (
             <View>
                 <View style={{height: height - 70 - Header.HEIGHT}}>
@@ -86,6 +87,8 @@ export default class DirectionScreen3 extends React.Component {
                     <PhoneIcon/>
                     <InfoIcon navigation={this.props.navigation}/>
                 </View>
+                <Image source={{uri: mapAddr}} resizeMode='stretch' style = {styles.map}
+                       accessbilityLabel={"floor map"} accessible = {true} />
                 <View style={styles.container}>
                     <TouchableOpacity
                         onPress={
@@ -115,16 +118,28 @@ export default class DirectionScreen3 extends React.Component {
     }
 }
 
-let {height, width} = Dimensions.get('window');
+let { height } = Dimensions.get('window');
 
 function matchVideoName(props) {
     let name = '';
     if (props.end === 'Bridge Level') {
         name = 'exit_to_bridge_as';
     } else if (props.end === 'Street Level') {
-        name = 'exir_to_street_as';
+        name = 'exit_to_street_as';
     } else if (props.end === 'Platform Level') {
         name = 'elevator_to_train_as';
+    }
+    return name;
+}
+
+function matchMapName(props) {
+    let name = "https://students.washington.edu/wfjiang/Maps/bridge_map.jpg";
+    if (props.end === 'Bridge Level') {
+        name = "https://students.washington.edu/wfjiang/Maps/bridge_map.jpg";
+    } else if (props.end === 'Street Level') {
+        name = "https://students.washington.edu/wfjiang/Maps/street_map.jpg";
+    } else if (props.end === 'Platform Level') {
+        name = "https://students.washington.edu/wfjiang/Maps/platform_map.jpg";
     }
     return name;
 }
@@ -153,5 +168,12 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         color: '#007AFF',
+    },
+    map: {
+        position: 'absolute',
+        height: 80,
+        width: 240,
+        top: 10,
+        left: 10,
     }
 });
