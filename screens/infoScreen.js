@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dimensions, Image, ScrollView, StyleSheet, Text, View} from 'react-native';
+import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 export default class InfoScreen extends React.Component {
     static navigationOptions = {
@@ -7,8 +7,6 @@ export default class InfoScreen extends React.Component {
     };
 
     render() {
-        const {navigate} = this.props.navigation;
-
         return (
             <View style = {styles.container}>
                 <Image style={styles.Image}
@@ -16,7 +14,7 @@ export default class InfoScreen extends React.Component {
                     accessibilityLabel = {"Floor Map"}
                     accessible = {true}
                 />
-                <ScrollView contentContainerStyle={styles.contentContainer}>
+                <ScrollView>
                     <Text style={styles.text}>
                         The University of Washington Link Light Rail station has three different levels.{"\n"}
                         The Bridge level is the topmost level of the station, and it includes a ticket vending machine and an uncovered walkway to the University of Washington.{"\n"}
@@ -29,14 +27,12 @@ export default class InfoScreen extends React.Component {
     }
 }
 
-let {width, height} = Dimensions.get('window');
+let { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        // alignItems: 'center',
-        // justifyContent: 'center',
     },
     text: {
         fontSize: 23,
@@ -44,12 +40,7 @@ const styles = StyleSheet.create({
         paddingRight:30,
         paddingTop: 10
     },
-    contentContainer: {
-        // paddingBottom: 50
-    },
     Image: {
-        // alignItems: 'center',
-        // marginTop: 50,
         width: width,
         height: 200,
         top: 0
