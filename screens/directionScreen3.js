@@ -19,7 +19,7 @@ export default class DirectionScreen3 extends React.Component {
         const { params } = this.props.navigation.state;
         const { navigate } = this.props.navigation;
         let uriAddr = "https://students.washington.edu/wfjiang/Videos2/" + matchVideoName(params) + ".mp4";
-
+        let mapAddr = "https://students.washington.edu/wfjiang/Maps/bridge_map.jpg"
 
         if (matchVideoName(params) === 'end_screen') {
             return (
@@ -81,6 +81,8 @@ export default class DirectionScreen3 extends React.Component {
                            onError={this.videoError}    // Callback when video cannot be loaded
                            style={styles.backgroundVideo} />
                     }
+                    <Image source={{uri: mapAddr}} resizeMode='stretch' style = {styles.map}
+                           accessbilityLabel={"floor map"} accessible = {true} />
                 </View>
                 <View style={{position: 'absolute', top: 10, right: 5}}>
                     <PhoneIcon/>
@@ -122,9 +124,21 @@ function matchVideoName(props) {
     if (props.end === 'Bridge Level') {
         name = 'exit_to_bridge_as';
     } else if (props.end === 'Street Level') {
-        name = 'exir_to_street_as';
+        name = 'exit_to_street_as';
     } else if (props.end === 'Platform Level') {
         name = 'elevator_to_train_as';
+    }
+    return name;
+}
+
+function matchMapName(props) {
+    let name = "https://students.washington.edu/wfjiang/Maps/bridge_map.jpg";
+    if (props.end === 'Bridge Level') {
+        name = "https://students.washington.edu/wfjiang/Maps/bridge_map.jpg";
+    } else if (props.end === 'Street Level') {
+        name = "https://students.washington.edu/wfjiang/Maps/street_map.jpg";
+    } else if (props.end === 'Platform Level') {
+        name = "https://students.washington.edu/wfjiang/Maps/platform_map.jpg";
     }
     return name;
 }
@@ -153,5 +167,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         color: '#007AFF',
+    },
+    map: {
+        height: 80,
+        width: 240,
+        marginTop: 10,
+        marginLeft: 10
     }
 });

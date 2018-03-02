@@ -19,6 +19,7 @@ export default class DirectionScreen extends React.Component {
         const { params } = this.props.navigation.state;
         const { navigate } = this.props.navigation;
         let uriAddr = "https://students.washington.edu/wfjiang/Videos2/" + matchVideoName(params) + ".mp4"
+        let mapAddr = matchMapName(params)
 
         return (
             <View>
@@ -63,6 +64,8 @@ export default class DirectionScreen extends React.Component {
                            onError={this.videoError}    // Callback when video cannot be loaded
                            style={styles.backgroundVideo} />
                     }
+                    <Image source={{uri: mapAddr}} resizeMode='stretch' style = {styles.map}
+                           accessbilityLabel={"floor map"} accessible = {true} />
                 </View>
                 <View style={{position: 'absolute', top: 10, right: 5}}>
                     <PhoneIcon/>
@@ -111,6 +114,18 @@ function matchVideoName(props) {
     return name;
 }
 
+function matchMapName(props) {
+    let mapAddr = "https://students.washington.edu/wfjiang/Maps/bridge_map.jpg"
+    if (props.start === 'Bridge Level') {
+        mapAddr = "https://students.washington.edu/wfjiang/Maps/bridge_map.jpg"
+    } else if (props.start === 'Street Level') {
+        mapAddr = "https://students.washington.edu/wfjiang/Maps/street_map.jpg"
+    } else if (props.start === 'Platform Level') {
+        mapAddr = "https://students.washington.edu/wfjiang/Maps/platform_map.jpg"
+    }
+    return mapAddr;
+}
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -135,5 +150,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 18,
         color: '#007AFF',
+    },
+    map: {
+        height: 80,
+        width: 240,
+        marginTop: 10,
+        marginLeft: 10
     }
 });
