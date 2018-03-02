@@ -15,7 +15,7 @@ export default class InfoScreen extends React.Component {
                     accessible = {true}
                     resizeMode = 'stretch'
                 />
-                <ScrollView>
+                <ScrollView style={styles.scroll}>
                     <Text style={styles.text}>
                         The University of Washington Link Light Rail station has three different levels.{"\n"}{"\n"}
                         The Bridge level is the topmost level of the station, and it includes a ticket vending machine and an uncovered walkway to the University of Washington.{"\n"}{"\n"}
@@ -34,14 +34,23 @@ let { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#fff0f5',
     },
     text: {
         fontSize: 21,
         padding: 20,
+        fontFamily: 'Verdana'
     },
     Image: {
-        width: width,
-        height: 200,
+        width: width - 20,
+        height: 194,
+        borderRadius: 10,
+        marginTop: 10,
+        marginBottom: 10,
+        marginLeft: 10,
+        marginRight: 10
+    },
+    scroll: {
+        backgroundColor: '#fff0f5'
     }
 });

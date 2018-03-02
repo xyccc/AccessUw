@@ -134,6 +134,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
-        color: '#007AFF',
+        color: '#8a2be2',
+        fontFamily: 'Menlo'
     }
 });

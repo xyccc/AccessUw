@@ -40,6 +40,8 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
     },
     title: {
-        fontSize: 28,
+        fontSize: 24,
+        marginTop: 10,
+        fontFamily: 'Courier'
     },
 });

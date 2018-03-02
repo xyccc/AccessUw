@@ -167,7 +167,8 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 18,
-        color: '#007AFF',
+        color: '#8a2be2',
+        fontFamily: 'Menlo'
     },
     map: {
         position: 'absolute',
@@ -175,5 +176,8 @@ const styles = StyleSheet.create({
         width: 240,
         top: 10,
         left: 10,
+        borderRadius: 10,
+        borderColor: '#000',
+        borderWidth: 3
     }
 });

@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     title: {
-        fontSize: 28,
+        fontSize: 24,
+        fontFamily: 'Courier'
+        
     },
 });

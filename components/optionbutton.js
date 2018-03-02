@@ -29,17 +29,22 @@ const styles = StyleSheet.create({
     button: {
         width: 340,
         height: (height - Header.HEIGHT - 77 - 80) / 3,
-        backgroundColor: '#F2F3F4',
+        backgroundColor: '#FAEBD7',
         justifyContent: 'center',
         alignItems: 'center',
+        borderRadius: 30
     },
     title: {
         fontSize: 28,
         color: '#007AFF',
+        fontFamily: 'Futura',
+        marginLeft: 5,
+        marginRight: 5
     },
     disabled: {
         fontSize: 28,
         color: '#909497',
+        fontFamily: 'Futura'
     }
 });
 

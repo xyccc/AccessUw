@@ -24,7 +24,7 @@ export default class StartScreen extends React.Component {
                         () => navigate("Origin", {})
                     }>
                     <View style={styles.button}>
-                        <Text style={styles.title}>Start navigation</Text>
+                        <Text style={styles.title}>Start Navigation</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -37,7 +37,7 @@ let { height, width } = Dimensions.get('window');
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#9370DB',
         alignItems: 'center',
         paddingTop: 10,
         paddingLeft: 10,
@@ -46,19 +46,27 @@ const styles = StyleSheet.create({
     },
     text: {
         textAlign: 'center',
-        fontSize: 28,
+        fontSize: 34,
         paddingLeft: 40,
         paddingRight: 40,
         paddingBottom: 50,
+        fontWeight: "bold",
+        color: '#ffd700',
+        fontFamily: 'Palatino-Bold'
     },
     button: {
         width: width - 80,
         height: height - 450,
         justifyContent: 'center',
         alignItems: 'center',
+        borderStyle: 'solid',
+        borderColor: '#fff',
+        backgroundColor: '#dcdcdc',
+        borderRadius: 20
     },
     title: {
         fontSize: 32,
-        color: '#007AFF',
+        color: '#000',
+        fontFamily: 'Menlo'
     },
 });
