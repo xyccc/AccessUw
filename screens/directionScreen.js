@@ -108,9 +108,13 @@ let {height} = Dimensions.get('window');
 
 function matchVideoName(props) {
     let name = '';
-    if (props.start === 'Bridge Level') {
+    if (props.ticket && props.start === 'Bridge Level') {
+        name = 'bridge_to_ticket_booth_as';
+    } else if (props.ticket && props.start === 'Street Level') {
+        name = 'street_to_ticket_booth_as';
+    } else if (props.start === 'Bridge Level') {
         name = 'bridge_to_elevator_as';
-    } else if (props.start === 'Street Level') {
+    } else if (props.start d=== 'Street Level') {
         name = 'street_to_elevator_as';
     } else if (props.start === 'Platform Level') {
         name = 'platform_to_elevator_as';
