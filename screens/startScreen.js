@@ -19,6 +19,10 @@ export default class StartScreen extends React.Component {
                     </View>
                 </View>
                 <Text style={styles.text} accessibilityLabel={"Welcome to AccessU Dub APP"}>Welcome to AccessUW APP</Text>
+                <Text style={styles.intro}>
+                Phone icon: call Link Station hotline.{"\n"}
+                Info icon: general information about the station.
+                </Text>
                 <TouchableOpacity
                     onPress={
                         () => navigate("Origin", {})
@@ -49,7 +53,7 @@ const styles = StyleSheet.create({
         fontSize: 34,
         paddingLeft: 40,
         paddingRight: 40,
-        paddingBottom: 50,
+        paddingBottom: 30,
         fontWeight: "bold",
         color: '#ffd700',
         fontFamily: 'Palatino-Bold'
@@ -69,4 +73,10 @@ const styles = StyleSheet.create({
         color: '#007AFF',
         fontFamily: 'Menlo'
     },
+    intro: {
+        fontSize: 15,
+        color: "#fff",
+        textAlign: 'left',
+        paddingBottom: 14
+    }
 });

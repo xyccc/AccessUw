@@ -21,7 +21,7 @@ export default class DirectionScreen extends React.Component {
         let uriAddr = "https://students.washington.edu/wfjiang/Videos2/" + matchVideoName(params) + ".mp4";
         let mapAddr = matchMapName(params);
         let nextPage = "Direction2";
-        if (params.ticket === true) {
+        if (params.ticket === true && params.end == 'Platform Level') {
             nextPage = "DirectionTicket";
         }
 
@@ -114,7 +114,7 @@ function matchVideoName(props) {
         name = 'street_to_ticket_booth_as';
     } else if (props.start === 'Bridge Level') {
         name = 'bridge_to_elevator_as';
-    } else if (props.start d=== 'Street Level') {
+    } else if (props.start === 'Street Level') {
         name = 'street_to_elevator_as';
     } else if (props.start === 'Platform Level') {
         name = 'platform_to_elevator_as';
