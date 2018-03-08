@@ -17,7 +17,7 @@ export default class DirectionScreen3 extends React.Component {
 
     render() {
         const { params } = this.props.navigation.state;
-        const { navigate } = this.props.navigation;
+        // const { navigate } = this.props.navigation;
         let uriAddr = "https://students.washington.edu/wfjiang/Videos2/" + matchVideoName(params) + ".mp4";
         let mapAddr = matchMapName(params);
 
@@ -88,7 +88,7 @@ export default class DirectionScreen3 extends React.Component {
                     <InfoIcon navigation={this.props.navigation}/>
                 </View>
                 <Image source={{uri: mapAddr}} resizeMode='stretch' style = {styles.map}
-                       accessbilityLabel={"floor map"} accessible = {true} />
+                       accessibilityLabel={"floor map"} accessible = {true} />
                 <View style={styles.container}>
                     <TouchableOpacity
                         onPress={
